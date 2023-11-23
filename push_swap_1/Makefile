@@ -6,7 +6,7 @@
 #    By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 10:09:55 by gabriel           #+#    #+#              #
-#    Updated: 2023/11/23 15:38:10 by gneto-co         ###   ########.fr        #
+#    Updated: 2023/11/23 16:21:30 by gneto-co         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,8 @@ CFLAGS = -Wall -Wextra -Werror -I$(LIBFT_PATH)
 #---------------------------------MAKEFILE RULES---------------------------------
 #--------------------------------------------------------------------------------
 
+.DEFAULT_GOAL := all
+
 all: $(NAME)
 
 $(NAME): $(OBJECTS) $(LIBFT)
@@ -75,4 +77,5 @@ fclean: clean
 	@$(MAKE) -C $(LIBFT_PATH) fclean --no-print-directory
 	@clear
 	@echo "\033[31m\033[33m\n---------program name and objects cleaned----------\033[0m"
+	
 re: fclean all
