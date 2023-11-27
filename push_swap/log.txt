@@ -1,0 +1,9 @@
+make file	2.0 - working
+ global		2.0
+ libft		1.0
+ project	1.0 - new
+ 
+main		1.0 - working
+_tester		1.0 - working - new
+
+stack_creation	1.0 - working - new
