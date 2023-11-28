@@ -6,7 +6,7 @@
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 10:30:24 by gneto-co          #+#    #+#             */
-/*   Updated: 2023/11/27 13:54:41 by gneto-co         ###   ########.fr       */
+/*   Updated: 2023/11/28 13:30:13 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,9 @@ void				ft_putstr(char *s);
 void				ft_putstr_newline(char *s);
 int					ft_put_unsigned_nbr(unsigned int n, int total);
 int					ft_putpt(unsigned long int nbr, char *base, int total);
+
+//get next line
+char				*get_next_line(int fd);
 
 //mine boollean functions
 int					ft_nb_already_exist(int *nb_list, int nb, size_t size);

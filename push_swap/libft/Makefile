@@ -6,7 +6,7 @@
 #    By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 10:51:25 by gneto-co          #+#    #+#              #
-#    Updated: 2023/11/23 15:12:16 by gneto-co         ###   ########.fr        #
+#    Updated: 2023/11/28 13:32:18 by gneto-co         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,7 +74,12 @@ VERIFICATIONSSOURCES = $(addprefix verifications/, \
 ft_nb_already_exist.c \
 )
 
-SOURCES = $(ORIGINALSOURCES) $(EXTRASOURCES) $(VERIFICATIONSSOURCES)
+GET_NEXT_LINE = $(addprefix get_next_line/, \
+get_next_line.c \
+get_next_line_utils.c \
+)
+
+SOURCES = $(ORIGINALSOURCES) $(EXTRASOURCES) $(VERIFICATIONSSOURCES) $(GET_NEXT_LINE)
 	
 OBJECTS = $(SOURCES:.c=.o)
 

@@ -1,3 +1,5 @@
+backup number	3
+
 make file		2.0 - working - !! main/tests configuration !!
  global			2.0
  libft			1.0
