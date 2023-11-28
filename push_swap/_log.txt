@@ -1,4 +1,4 @@
-backup number	3
+backup number	4
 
 make file		2.0 - working - !! main/tests configuration !!
  global			2.0
@@ -11,6 +11,9 @@ tests			1.0 - working to swap
 
 stack_creation	1.0 - working
 operations/swap	1.0 - working
- sa!
- sb!
- ss!
+ sa
+ sb
+ ss
+operations/push 1.0 - working
+ pa!
+ pb!

@@ -6,7 +6,7 @@
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 13:41:29 by gneto-co          #+#    #+#             */
-/*   Updated: 2023/11/28 13:42:37 by gneto-co         ###   ########.fr       */
+/*   Updated: 2023/11/28 13:58:03 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_strjoin_gnl(char *s1, char *s2)
 	char	*str;
 
 	i = 0;
-	str = (char *)malloc(ft_linelen(s1) + ft_linelen(s2) + 1);
+	str = (char *)malloc(ft_linelen_gnl(s1) + ft_linelen_gnl(s2) + 1);
 	if (!str)
 		return (NULL);
 	while (s1 && s1[i])

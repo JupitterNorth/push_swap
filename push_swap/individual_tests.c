@@ -6,7 +6,7 @@
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:27:52 by gneto-co          #+#    #+#             */
-/*   Updated: 2023/11/28 11:53:06 by gneto-co         ###   ########.fr       */
+/*   Updated: 2023/11/28 18:25:18 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,8 +146,8 @@ static void	ft_table_stacks(t_list *stack_A, t_list *stack_B)
 int main()
 {
 	// criar stack A e B de exemplo
-	int arrayA[] = {20, 10, 30};
-	int arrayB[] = {40, 50, 60};
+	int arrayA[] = {10, 20 ,30};
+	int arrayB[] = {40, 50, 60, 70};
 	t_list		*stack_A;
 	t_list		*stack_B;
 	stack_A = ft_stack_creation(arrayA, sizeof(arrayA) / sizeof(arrayA[0]));
@@ -156,8 +156,8 @@ int main()
 	// imprimir stack A e B
 	ft_table_stacks(stack_A, stack_B);
 	
-	// operacao sa
-	operation_sa(&stack_A);
+	// operacao pa
+	operation_pa(&stack_A, &stack_B);
 	printf("\n----(ss)----\n");
 	
 	// imprimir stack A e B

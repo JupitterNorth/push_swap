@@ -6,7 +6,7 @@
 #    By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 10:51:25 by gneto-co          #+#    #+#              #
-#    Updated: 2023/11/28 10:12:36 by gneto-co         ###   ########.fr        #
+#    Updated: 2023/11/28 17:47:46 by gneto-co         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ stack_creation.c \
 
 OPERATIONS_SOURCES = $(addprefix operations/, \
 swap.c \
+push.c \
 )
 
 SOURCES = $(OPERATIONS_SOURCES) $(FUNCTIONS_SOURCES)
