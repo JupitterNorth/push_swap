@@ -6,7 +6,7 @@
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 10:27:56 by gneto-co          #+#    #+#             */
-/*   Updated: 2023/11/28 13:55:11 by gneto-co         ###   ########.fr       */
+/*   Updated: 2023/11/28 18:31:17 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int main()
         }
         else if (i == '5')
         {
-            system("git add ../* && git commit -m \"bk3\" && git push && git log");
+            system("git add ../* && git commit -m \"bk4\" && git push && git log");
         }
         else if (i == '6')
         {
