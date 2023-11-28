@@ -1,0 +1,16 @@
+backup number	3
+
+make file		2.0 - working - !! main/tests configuration !!
+ global			2.0
+ libft			1.0
+ project		1.0
+ 
+main			1.0 - working
+_tester			1.0 - working
+tests			1.0 - working to swap
+
+stack_creation	1.0 - working
+operations/swap	1.0 - working
+ sa!
+ sb!
+ ss!
