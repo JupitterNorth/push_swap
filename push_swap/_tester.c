@@ -6,7 +6,7 @@
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 10:27:56 by gneto-co          #+#    #+#             */
-/*   Updated: 2023/11/27 12:43:18 by gneto-co         ###   ########.fr       */
+/*   Updated: 2023/11/28 11:56:37 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int main()
         }
         else if (i == '5')
         {
-            system("git add ../* && git commit -m \"bk2\" && git push && git log");
+            system("git add ../* && git commit -m \"bk3\" && git push && git log");
         }
         else if (i == '6')
         {
@@ -61,9 +61,17 @@ int main()
             printf("\033[34mnorminette test (only errors): \033[0m\n");
             system("find . -type f \\( -name '*.c' -o -name '*.h' \\) ! -name '_tester.c' -exec norminette {} \\; | grep -E 'Error|Warning'");
         }
+        else if (i == '7')
+        {
+            if (i == '8')
+            {
+                printf("BANANA");
+            }
+            
+        }
         else if (i == 'q')
         {
-            system("rm a.out");
+            system("rm .tester");
             system("clear");
             exit(0);
         }

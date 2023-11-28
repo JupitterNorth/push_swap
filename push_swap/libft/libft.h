@@ -6,7 +6,7 @@
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 10:30:24 by gneto-co          #+#    #+#             */
-/*   Updated: 2023/11/15 10:18:21 by gneto-co         ###   ########.fr       */
+/*   Updated: 2023/11/27 13:54:41 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
+
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648
 
 typedef struct s_list
 {

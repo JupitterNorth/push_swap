@@ -6,9 +6,11 @@
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 11:11:06 by gneto-co          #+#    #+#             */
-/*   Updated: 2023/11/23 15:45:11 by gneto-co         ###   ########.fr       */
+/*   Updated: 2023/11/27 13:55:41 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {
@@ -31,7 +33,7 @@ int	ft_atoi(const char *nptr)
 		nbr += *nptr - '0';
 		nptr++;
 	}
-	if (nbr * sinal > 2147483647 || nbr * sinal < -2147483648)
+	if (nbr * sinal > INT_MAX || nbr * sinal < INT_MIN)
 		nbr = 0;
 	return (nbr * sinal);
 }
