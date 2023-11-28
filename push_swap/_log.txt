@@ -1,19 +1,25 @@
-backup number	4
+backup number		5
 
-make file		2.0 - working - !! main/tests configuration !!
- global			2.0
- libft			1.0
- project		1.0
+make file			2.0 - working - !! main/tests configuration !!
+ global				2.0
+ libft				1.0
+ project			1.0
  
-main			1.0 - working
-_tester			1.0 - working
-tests			1.0 - working to swap
+main				1.0 - working
+_tester				1.0 - working
+tests				1.0 - working to swap
 
-stack_creation	1.0 - working
-operations/swap	1.0 - working
- sa
- sb
- ss
-operations/push 1.0 - working
- pa!
- pb!
+functions/
+ stack_creation		1.0 - working
+ organize			1.0 - working !
+
+
+operations/
+ swap				1.0 - working
+  sa
+  sb
+  ss
+ push				1.0 - working !
+  pa
+  pb
+ rotate				0.0 - does nothing !

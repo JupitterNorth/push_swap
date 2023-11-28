@@ -6,7 +6,7 @@
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:01:08 by gabriel           #+#    #+#             */
-/*   Updated: 2023/11/28 17:48:05 by gneto-co         ###   ########.fr       */
+/*   Updated: 2023/11/28 21:33:12 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ typedef struct node_data
 }		t_node_data;
 
 t_list	*ft_stack_creation(int *nb_list, int size);
+void	ft_organize_stack(t_list **stack);
+
 void	operation_sa(t_list **stack_A);
 void	operation_sb(t_list **stack_B);
 void	operation_ss(t_list **stack_A, t_list **stack_B);

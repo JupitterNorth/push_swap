@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   organize.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/28 17:37:34 by gneto-co          #+#    #+#             */
-/*   Updated: 2023/11/28 21:49:31 by gneto-co         ###   ########.fr       */
+/*   Created: 2023/11/28 20:19:34 by gneto-co          #+#    #+#             */
+/*   Updated: 2023/11/28 21:49:01 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void	op_push(t_list **dest, t_list **src)
+void	ft_organize_stack(t_list **stack)
 {
-	t_list	*temp;
+	int i;
+	t_list *temp;
+	t_node_data *data;
 
-	if (!(*src))
+	if (!stack)
 		return ;
-    temp = (*src)->next;
-	(*src)->next = (*dest);
-	(*dest) = (*src);
-    (*src) = temp;
-	ft_organize_stack(&(*src));
-	ft_organize_stack(&(*dest));
-}
-
-void	operation_pa(t_list **stack_A, t_list **stack_B)
-{
-	op_push(&(*stack_A), &(*stack_B));
-}
-
-void	operation_pb(t_list **stack_A, t_list **stack_B)
-{
-	op_push(&(*stack_B), &(*stack_A));
+	temp = (*stack);
+	i = 0;
+	while (i < ft_lstsize(*stack))
+	{
+		data = temp->content;
+		data->pos = i;
+		temp = temp->next;
+		i++;
+	}
 }
