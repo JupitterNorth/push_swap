@@ -5,75 +5,166 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/27 10:27:56 by gneto-co          #+#    #+#             */
-/*   Updated: 2023/11/28 18:31:17 by gneto-co         ###   ########.fr       */
+/*   Created: 2023/11/28 10:27:52 by gneto-co          #+#    #+#             */
+/*   Updated: 2023/11/29 09:58:31 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include <time.h>
+#include "push_swap_files/push_swap.h"
+#include <stdio.h>
 
+/* //ft_stack_creation
 int main()
 {
-    char i = 0;
+	int array[] = {23, 42, 9, 5, 2};
+	t_list		*stack;
+	t_node_data	*data;
+	
+	stack = ft_stack_creation(array, 5);
+	printf("--(%d)--", ft_lstsize(stack));
 
-    system("clear");   
-    while(i != 'q')
-    {
-        printf("\033]0;Test Menu\007");
-        
-        printf(
-            "\nExecute:\n"
-            "\n\033[93m 1\x1b[0m ./push_swap"
-            "\n\033[93m 2\x1b[0m valgrind ./push_swap"
-            "\n\033[32m 3\x1b[0m make re"
-            "\n\033[32m 4\x1b[0m make fclean"
-            "\n\033[34m 5\x1b[0m git commit"
-            "\n\033[35m 6\x1b[0m norminette"
-            "\n\x1b[31m q\x1b[0m to quit"
-            "\n\n> "
-        );
-        scanf(" %c", &i);
-        system("clear");
-        if (i == '1')
-        {
-            system("./push_swap 56 17 92 41 30 83 12 68 75 6 49 23 88 7 98 34 51 19 63 85");
-        }
-        else if (i == '2')
-        {
-            system("valgrind ./push_swap 56 17 92 41 30 83 12 68 75 6 49 23 88 7 98 34 51 19 63 85");
-        }
-        else if (i == '3')
-        {
-            system("make re");
-        }
-        else if (i == '4')
-        {
-            system("make fclean");
-        }
-        else if (i == '5')
-        {
-            system("git add ../* && git commit -m \"bk4\" && git push && git log");
-        }
-        else if (i == '6')
-        {
-            system("clear");
-            printf("\033[34mnorminette test (only errors): \033[0m\n");
-            system("find . -type f \\( -name '*.c' -o -name '*.h' \\) ! -name '_tester.c' -exec norminette {} \\; | grep -E 'Error|Warning'");
-        }
-        else if (i == '7')
-        {
-            if (i == '8')
-            {
-                printf("BANANA");
-            }
-            
-        }
-        else if (i == 'q')
-        {
-            system("rm .tester");
-            system("clear");
-            exit(0);
-        }
-    }
+	for (size_t i = 0; i < 5; i++)
+	{
+		data = stack->content;
+		printf("\n"
+		"\nelemento: %d"
+		"\nnumero: %d"
+		"\nposicao: %d"
+		"\n"
+		, data->ele, data->nb, data->pos);
+		stack = stack->next;
+	}
+	
+	
+} */
+/* static void	ft_print_stack(t_list *stack, int size)
+{
+	int i;
+	t_node_data	*data;
+	
+	i = 0;
+	while(i < size)
+	{
+		data = stack->content;
+		printf("\n"
+		"\nelemento: %d"
+		"\nnumero: %d"
+		"\nposicao: %d"
+		"\n"
+		, data->ele, data->nb, data->pos);
+		stack = stack->next;
+		i++;
+	}
+} */
+
+/* static void	ft_table_stack(t_list *stack, int size, char c)
+{
+	int i;
+	t_node_data	*data[size];
+	
+	i = 0;
+	while(i < size)
+	{
+		data[i] = stack->content;
+		stack = stack->next;
+		i++;
+	}
+
+	i = 0;
+	printf(
+		"\n┌─────┬─────┬─────┐"
+		"\n│  %c  │ ele │ num │"
+		,c
+	);
+	while (i < size)
+	{
+		printf(
+			"\n├─────┼─────┼─────┤"
+			"\n│ %3d │ %3d │ %3d │"
+			,data[i]->pos
+			,data[i]->ele
+			,data[i]->nb
+		);
+		i++;
+	}
+	printf(
+		"\n└─────┴─────┴─────┘"
+	);
+	
+} */
+
+static void	ft_table_stacks(t_list *stack_A, t_list *stack_B)
+{
+	int i;
+	int size_A = ft_lstsize(stack_A);
+	int size_B = ft_lstsize(stack_B);
+	t_node_data	*data_A[size_A];
+	t_node_data	*data_B[size_B];
+	
+	i = 0;
+	while(i < size_A)
+	{
+		data_A[i] = stack_A->content;
+		stack_A = stack_A->next;
+		i++;
+	}
+	i = 0;
+	while(i < size_B)
+	{
+		data_B[i] = stack_B->content;
+		stack_B = stack_B->next;
+		i++;
+	}
+
+	i = 0;
+	printf(
+		"\n┌─────┬─────┬─────┐┌─────┬─────┬─────┐"
+		"\n│  A  │ ele │ num ││  B  │ ele │ num │"
+	);
+	while (i < size_A || i < size_B)
+	{
+		printf(
+			"\n├─────┼─────┼─────┤├─────┼─────┼─────┤\n"
+		);
+		if (i < size_A)
+			printf("│ %3d │ %3d │ %3d │", data_A[i]->pos, data_A[i]->ele, data_A[i]->nb);
+		else
+			printf("│     │     │     │");
+		if (i < size_B)
+			printf("│ %3d │ %3d │ %3d │", data_B[i]->pos, data_B[i]->ele, data_B[i]->nb);
+		else
+			printf("│     │     │     │");
+		i++;
+	}
+	printf(
+		"\n└─────┴─────┴─────┘└─────┴─────┴─────┘"
+	);
+	
+}
+
+//operations
+int main()
+{
+	// criar stack A e B de exemplo
+	int arrayA[] = {10, 30, 20};
+	int arrayB[] = {};
+	t_list		*stack_A;
+	t_list		*stack_B;
+	stack_A = ft_stack_creation(arrayA, sizeof(arrayA) / sizeof(arrayA[0]));
+	stack_B = ft_stack_creation(arrayB, sizeof(arrayB) / sizeof(arrayB[0]));
+
+	// imprimir stack A e B
+	ft_table_stacks(stack_A, stack_B);
+	
+	printf("\n\n----(pb)----\n");
+	operation_pb(&stack_A, &stack_B);
+	
+	printf("\n\n----(sa)----\n");
+	operation_sa(&stack_A);
+	
+	printf("\n\n----(pa)----\n");
+	operation_pa(&stack_A, &stack_B);
+	
+	// imprimir stack A e B
+	ft_table_stacks(stack_A, stack_B);
 }
