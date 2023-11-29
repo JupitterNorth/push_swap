@@ -6,7 +6,7 @@
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 15:54:11 by gneto-co          #+#    #+#             */
-/*   Updated: 2023/11/15 10:17:35 by gneto-co         ###   ########.fr       */
+/*   Updated: 2023/11/29 11:16:07 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,15 @@ t_list	*ft_lstlast(t_list *lst)
 	if (!lst)
 		return (0);
 	while (lst->next)
+		lst = lst->next;
+	return (lst);
+}
+
+t_list	*ft_lst_second_last(t_list *lst)
+{
+	if (!lst)
+		return (0);
+	while (lst->next->next)
 		lst = lst->next;
 	return (lst);
 }

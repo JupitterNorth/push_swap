@@ -6,7 +6,7 @@
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:27:52 by gneto-co          #+#    #+#             */
-/*   Updated: 2023/11/29 09:58:31 by gneto-co         ###   ########.fr       */
+/*   Updated: 2023/11/29 11:35:23 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,26 +145,36 @@ static void	ft_table_stacks(t_list *stack_A, t_list *stack_B)
 //operations
 int main()
 {
-	// criar stack A e B de exemplo
-	int arrayA[] = {10, 30, 20};
+	// create example stack A e B 
+	int arrayA[] = {2, 1, 0, 3, 4, 5};
 	int arrayB[] = {};
 	t_list		*stack_A;
 	t_list		*stack_B;
 	stack_A = ft_stack_creation(arrayA, sizeof(arrayA) / sizeof(arrayA[0]));
 	stack_B = ft_stack_creation(arrayB, sizeof(arrayB) / sizeof(arrayB[0]));
 
-	// imprimir stack A e B
-	ft_table_stacks(stack_A, stack_B);
 	
-	printf("\n\n----(pb)----\n");
+	printf("\n\n----(pb x3)----\n");
+	operation_pb(&stack_A, &stack_B);
+	operation_pb(&stack_A, &stack_B);
 	operation_pb(&stack_A, &stack_B);
 	
-	printf("\n\n----(sa)----\n");
-	operation_sa(&stack_A);
+	// print stack A e B
+	ft_table_stacks(stack_A, stack_B);
 	
-	printf("\n\n----(pa)----\n");
-	operation_pa(&stack_A, &stack_B);
+	// printf("\n\n----(sa)----\n");
+	// operation_sa(&stack_A);
 	
-	// imprimir stack A e B
+	// printf("\n\n----(pa)----\n");
+	// operation_pa(&stack_A, &stack_B); 
+	
+	// printf("\n\n----(ra)----\n");
+	// operation_ra(&stack_A);
+	
+	printf("\n\n----(rr)----\n");
+	operation_rr(&stack_A, &stack_B);
+
+	
+	// print stack A e B
 	ft_table_stacks(stack_A, stack_B);
 }

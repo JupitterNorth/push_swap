@@ -6,7 +6,7 @@
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:01:08 by gabriel           #+#    #+#             */
-/*   Updated: 2023/11/28 21:33:12 by gneto-co         ###   ########.fr       */
+/*   Updated: 2023/11/29 11:20:28 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,13 @@ void	operation_ss(t_list **stack_A, t_list **stack_B);
 
 void	operation_pa(t_list **stack_A, t_list **stack_B);
 void	operation_pb(t_list **stack_A, t_list **stack_B);
+
+void	operation_ra(t_list **stack_A);
+void	operation_rb(t_list **stack_B);
+void	operation_rr(t_list **stack_A, t_list **stack_B);
+
+void	operation_rra(t_list **stack_A);
+void	operation_rrb(t_list **stack_B);
+void	operation_rrr(t_list **stack_A, t_list **stack_B);
 
 #endif

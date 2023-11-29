@@ -1,4 +1,4 @@
-_log        		5.0
+_log        		6.0
 
 make file			2.0 - working - !! main/tests configuration !!
  global				2.0
@@ -6,8 +6,8 @@ make file			2.0 - working - !! main/tests configuration !!
  project			1.0
  
 main				1.0 - working
-_tester				1.0 - working !
-_menu				1.0 - working !
+_tester				1.0 - working
+_menu				1.0 - working
 
 functions/
  stack_creation		1.0 - working
@@ -22,4 +22,11 @@ operations/
  push				1.0 - working
   pa
   pb
- rotate				0.0 - does nothing
+ rotate				1.0 - working !
+  ra !
+  rb !
+  rr !
+ reverse_rotate		1.0 - working !
+  rra !
+  rrb !
+  rrr !

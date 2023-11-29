@@ -4,5 +4,9 @@
         "stdio.h": "c",
         "push_swap.h": "c",
         "get_next_line.h": "c"
-    }
+    },
+    "cSpell.words": [
+        "gneto",
+        "lstsize"
+    ]
 }

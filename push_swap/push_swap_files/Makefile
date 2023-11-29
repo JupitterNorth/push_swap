@@ -6,7 +6,7 @@
 #    By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 10:51:25 by gneto-co          #+#    #+#              #
-#    Updated: 2023/11/28 21:33:34 by gneto-co         ###   ########.fr        #
+#    Updated: 2023/11/29 11:20:11 by gneto-co         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,8 @@ organize.c \
 OPERATIONS_SOURCES = $(addprefix operations/, \
 swap.c \
 push.c \
+rotate.c \
+reverse_rotate.c \
 )
 
 SOURCES = $(OPERATIONS_SOURCES) $(FUNCTIONS_SOURCES)
