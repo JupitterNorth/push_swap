@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/30 12:10:01 by gneto-co          #+#    #+#             */
-/*   Updated: 2023/11/30 17:36:10 by gneto-co         ###   ########.fr       */
+/*   Created: 2023/11/25 17:11:03 by gneto-co          #+#    #+#             */
+/*   Updated: 2023/11/30 16:09:49 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 static void	ft_table_stacks(t_list *stack_A, t_list *stack_B)
 {
@@ -61,29 +61,34 @@ static void	ft_table_stacks(t_list *stack_A, t_list *stack_B)
 	fflush(stdout);
 }
 
-int	ft_sort_stack(t_list **stack_A, t_list **stack_B)
+
+int	ft_push_swap(int *nb_list, int size)
 {
-	int	moves;
-	int half;
-	
-    (void)ft_table_stacks;
-	moves = 0;
-	half = (ft_lstsize(*stack_A)-1) / 2;
-	while (!stack_in_order(*stack_A))
-	{
-		// half /= 2;
-        while (*stack_A)
-        {
-    		moves += ft_algorithm_1A(&(*stack_A), &(*stack_B), half);
-        }
-        // ft_table_stacks((*stack_A), (*stack_B));
-        // getchar();
-        while (*stack_B)
-        {
-		    moves += ft_algorithm_1B(&(*stack_A), &(*stack_B), half);
-        }
-        // ft_table_stacks((*stack_A), (*stack_B));
-        // getchar();
-	}
-    return moves;
+	t_list *stack_A;
+	t_list *stack_B;
+	int moves;
+	// create stacks A and B
+	stack_A = ft_stack_creation(nb_list, size);
+	stack_B = ft_stack_creation(NULL, 0);
+
+    // show original stacks
+    ft_table_stacks(stack_A, stack_B);
+
+    ft_putstr("\n\n");
+    
+	// execute algorithm
+	moves = ft_sort_stack(&stack_A, &stack_B);
+    // moves = 0;
+
+    ft_putstr("\n\n");
+
+    // show final stacks
+    ft_table_stacks(stack_A, stack_B);
+
+    // free stacks
+    ft_lstclear(&stack_A, free);
+    ft_lstclear(&stack_B, free);
+    
+    
+	return (moves);
 }
