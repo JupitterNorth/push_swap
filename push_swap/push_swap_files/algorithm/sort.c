@@ -6,7 +6,7 @@
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 12:10:01 by gneto-co          #+#    #+#             */
-/*   Updated: 2023/12/03 13:57:01 by gneto-co         ###   ########.fr       */
+/*   Updated: 2023/12/03 15:42:38 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@ static void	ft_table_stacks(t_list *stack_A, t_list *stack_B)
 	int			i;
 	int			size_A;
 	int			size_B;
+	
+	size_A = ft_lstsize(stack_A);
+	size_B = ft_lstsize(stack_B);
+	
 	t_node_data	*data_A[size_A];
 	t_node_data	*data_B[size_B];
 
-	size_A = ft_lstsize(stack_A);
-	size_B = ft_lstsize(stack_B);
 	i = 0;
 	while (i < size_A)
 	{
@@ -90,6 +92,7 @@ int	ft_sort_stack(t_list **stack_A, t_list **stack_B)
 int	ft_sort_stack(t_list **stack_A, t_list **stack_B)
 {
 	int moves;
+	int half;
 
 	(void)ft_table_stacks;
 	moves = 0;
@@ -97,7 +100,9 @@ int	ft_sort_stack(t_list **stack_A, t_list **stack_B)
 	{
 		while (*stack_A)
 		{
-			moves += ft_algorithm_2A(&(*stack_A), &(*stack_B));
+			half = (ft_lstsize(*stack_A)) / 2;
+			// ft_putnbr(half);
+			moves += ft_algorithm_2A(&(*stack_A), &(*stack_B), half);
 		}
 		// ft_table_stacks((*stack_A), (*stack_B));
 		// getchar();

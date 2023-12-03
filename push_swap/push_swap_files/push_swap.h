@@ -6,7 +6,7 @@
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:01:08 by gabriel           #+#    #+#             */
-/*   Updated: 2023/12/03 13:36:02 by gneto-co         ###   ########.fr       */
+/*   Updated: 2023/12/03 15:11:16 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int		ft_sort_stack(t_list **stack_A, t_list **stack_B);
 int		ft_algorithm_1A(t_list **stack_A, t_list **stack_B, int half);
 int		ft_algorithm_1B(t_list **stack_A, t_list **stack_B, int half);
 // al 2
-int		ft_algorithm_2A(t_list **stack_A, t_list **stack_B);
+int		ft_algorithm_2A(t_list **stack_A, t_list **stack_B, int half);
 int		ft_algorithm_2B(t_list **stack_A, t_list **stack_B);
 
 #endif

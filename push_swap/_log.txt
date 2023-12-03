@@ -1,4 +1,4 @@
-_log        		9.0
+_log        		9.1
 
 
 make file			2.0 - working - !! main/tests configuration !!
@@ -44,11 +44,13 @@ algorithm/
 	ex1: 18
 	ex2: 168
 	ex3: 1502
+	ex4: 5411
 
- algorithm2			1.0 ! - results:
-	ex1: 26
-	ex2: 142
-	ex3: 802
+ algorithm2			1.1 ! - results:
+	ex1: 17
+	ex2: 108
+	ex3: 455
+	ex4: 1750
 
 
 
