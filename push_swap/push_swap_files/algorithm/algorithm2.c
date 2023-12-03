@@ -6,7 +6,7 @@
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 10:27:14 by gneto-co          #+#    #+#             */
-/*   Updated: 2023/12/03 16:14:49 by gneto-co         ###   ########.fr       */
+/*   Updated: 2023/12/03 17:23:37 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ int	ft_algorithm_2A(t_list **stack_A, t_list **stack_B, int half)
 		while (data_A0->ele != data_A_min->ele)
 		{
 			data_A_min = ft_get_smallest_element(*stack_A);
-			ft_putstr("\nexe:");
 			if (data_A_min->pos < half)
 				al_execution("ra", &(*stack_A), &(*stack_B));
 			else
