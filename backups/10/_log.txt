@@ -1,0 +1,70 @@
+_log        		10.0
+
+
+make file			2.0 - working - !! main/tests configuration !!
+ global				2.0
+ libft				1.0
+ project			1.0
+ 
+
+_tester				1.0
+_menu				1.0
+
+
+main				2.0
+push_swap			1.0 - working on test mode
+
+functions/
+ stack_creation		1.0
+ organize			1.0
+
+
+operations/
+ swap				1.0
+  sa
+  sb
+  ss
+ push				1.0
+  pa
+  pb
+ rotate				1.0
+  ra
+  rb
+  rr
+ reverse_rotate		1.0
+  rra
+  rrb
+  rrr
+
+algorithm/
+ order_verification	1.0
+ al_utils			1.0
+ sort				1.0 -
+	3 - working
+	5 - working
+
+ algorithm1			3.0 -
+
+ algorithm2			1.1 - 
+ 	results:
+	ex1: 17		: 30	: 16
+	ex2: 108	: 139	: 185
+	ex3: 455	: 552	: 758
+	ex4: 1750	: 1508	: 1908
+	ex5: 31334	: 28471	: 29379
+
+	exc:   2	:  1,2	: 1,1,2//b
+
+ algorithm4			1.0 - 
+	sort 3 numbers
+
+ algorithm5			1.0 - 
+	sort 4 or 5 numbers
+
+
+used examples:
+1:	7 numbers
+2:	20 numbers
+3:	50 numbers
+4:	100 numbers
+5:	500 numbers
