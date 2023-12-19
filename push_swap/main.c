@@ -6,7 +6,7 @@
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 10:29:13 by gabriel           #+#    #+#             */
-/*   Updated: 2023/11/30 14:47:02 by gneto-co         ###   ########.fr       */
+/*   Updated: 2023/12/07 15:15:09 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,25 @@ static int	*ft_args_to_numbers(int ac, char *av[])
 	nb_list = malloc(sizeof(int) * (ac - 1));
 	while (i < ac - 1)
 	{
-		if (!ft_atoi(av[i + 1]) || ft_nb_already_exist(nb_list, ft_atoi(av[i
-					+ 1]), (i)))
-			return (0);
+		if (!ft_atoi(av[i + 1]) || ft_nb_already_exist(nb_list, ft_atoi(av[i + 1]), i))
+		{
+			if (!(!ft_strncmp(av[i + 1], "0", 2) && !ft_nb_already_exist(nb_list, ft_atoi(av[i + 1]), i)))
+			{
+				if (ft_nb_already_exist(nb_list, ft_atoi(av[i + 1]), i))
+				{
+					ft_putnbr(ft_atoi(av[i + 1]));
+					ft_putstr(" - Number already exist\n");
+					return (0);
+				}
+				if (!ft_atoi(av[i + 1]))
+				{
+					ft_putstr(av[i + 1]);
+					ft_putstr(" - Is not a number\n");
+					return (0);
+				}
+			}
+				
+		}
 		nb_list[i] = ft_atoi(av[i + 1]);
 		i++;
 	}
@@ -39,15 +55,13 @@ static int	*ft_args_to_numbers(int ac, char *av[])
 int	main(int ac, char *av[])
 {
 	int	*nb_list;
-	int	moves;
 
 	if (ac >= 2)
 	{
 		nb_list = ft_args_to_numbers(ac, av);
 		if (nb_list)
 		{
-			moves = ft_push_swap(nb_list, ac - 1);
-			printf("\n\nMoves: %d", moves);
+			ft_push_swap(nb_list, ac - 1);
 			free(nb_list);
 		}
 		else

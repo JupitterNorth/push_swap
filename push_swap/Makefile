@@ -6,7 +6,7 @@
 #    By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 10:09:55 by gabriel           #+#    #+#              #
-#    Updated: 2023/11/30 14:42:06 by gneto-co         ###   ########.fr        #
+#    Updated: 2023/12/19 19:36:27 by gneto-co         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,7 +73,7 @@ all: $(NAME)
 $(NAME): $(MAIN) $(PROJECT) $(LIBFT)
 	$(CC) $(CFLAGS) -o $(NAME) $(MAIN) $(PROJECT) $(LIBFT)
 	@clear
-	@echo "\033[32m\n----------$(NAME) compiled and ready!----------"
+	@echo "\033[32m\n----------$(NAME) compiled and ready!----------\033[0m"
 
 clean:
 	@rm -f $(MAIN) $(NAME)

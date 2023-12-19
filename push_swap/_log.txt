@@ -1,4 +1,4 @@
-_log        		9.1
+_log        		10.0
 
 
 make file			2.0 - working - !! main/tests configuration !!
@@ -39,24 +39,32 @@ operations/
 algorithm/
  order_verification	1.0
  al_utils			1.0
- sort				1.0 - working for al_1
- algorithm1			3.0 - results:
-	ex1: 18
-	ex2: 168
-	ex3: 1502
-	ex4: 5411
+ sort				1.0 -
+	3 - working
+	5 - working
 
- algorithm2			1.1 ! - results:
-	ex1: 17
-	ex2: 108
-	ex3: 455
-	ex4: 1750
+ algorithm1			3.0 -
 
+ algorithm2			1.1 - 
+ 	results:
+	ex1: 17		: 30	: 16
+	ex2: 108	: 139	: 185
+	ex3: 455	: 552	: 758
+	ex4: 1750	: 1508	: 1908
+	ex5: 31334	: 28471	: 29379
 
+	exc:   2	:  1,2	: 1,1,2//b
+
+ algorithm4			1.0 - 
+	sort 3 numbers
+
+ algorithm5			1.0 - 
+	sort 4 or 5 numbers
 
 
 used examples:
-1:		system("./push_swap 30 20 10 40 50 70 60");
-2:		system("./push_swap 56 17 92 41 30 83 12 68 75 6 49 23 88 7 98 34 51 19 63 85");
-3:		system("./push_swap -53 -87 25 -46 -38 -72 39 -91 62 54 -19 70 11 26 47 -95 -63 81 17 -29 -65 88 -10 -56 -74 33 98 92 42 -84 76 -60 3 61 -5 -30 96 58 -12 -47 36 -4 -57 -21 -32 44 -16 -40 7 68 22 74");
-		
+1:	7 numbers
+2:	20 numbers
+3:	50 numbers
+4:	100 numbers
+5:	500 numbers

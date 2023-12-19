@@ -6,7 +6,7 @@
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 10:30:24 by gneto-co          #+#    #+#             */
-/*   Updated: 2023/11/30 11:39:20 by gneto-co         ###   ########.fr       */
+/*   Updated: 2023/12/07 15:31:38 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ void				ft_putstr_newline(char *s);
 int					ft_put_unsigned_nbr(unsigned int n, int total);
 int					ft_putpt(unsigned long int nbr, char *base, int total);
 t_list				*ft_lst_second_last(t_list *lst);
+t_list				*ft_lstdup(t_list *lst, void (*del)(void *));
 
 // get next line
 char				*get_next_line(int fd);

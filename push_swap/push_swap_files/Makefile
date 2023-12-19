@@ -6,7 +6,7 @@
 #    By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 10:51:25 by gneto-co          #+#    #+#              #
-#    Updated: 2023/12/03 13:37:59 by gneto-co         ###   ########.fr        #
+#    Updated: 2023/12/19 17:15:53 by gneto-co         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,8 @@ push_swap.c \
 FUNCTIONS_SOURCES = $(addprefix functions/, \
 stack_creation.c \
 organize.c \
+order_verification.c \
+al_utils1.c \
 )
 
 OPERATIONS_SOURCES = $(addprefix operations/, \
@@ -28,11 +30,11 @@ reverse_rotate.c \
 )
 
 ALGORITHM_SOURCES = $(addprefix algorithm/, \
-order_verification.c \
-al_utils.c \
 sort.c \
 algorithm1.c \
 algorithm2.c \
+algorithm4.c \
+algorithm5.c \
 )
 
 SOURCES = $(PROJECT_SOURCES) $(OPERATIONS_SOURCES) $(FUNCTIONS_SOURCES) $(ALGORITHM_SOURCES)
@@ -46,7 +48,7 @@ CFLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME): $(OBJECTS) 
-	ar rcs $(NAME) $(OBJECTS)
+	@ar rcs $(NAME) $(OBJECTS)
 
 clean:
 	@rm -f $(OBJECTS)
