@@ -6,7 +6,7 @@
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 11:15:02 by gneto-co          #+#    #+#             */
-/*   Updated: 2023/12/28 12:29:52 by gneto-co         ###   ########.fr       */
+/*   Updated: 2023/12/28 16:21:50 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static int	ft_get_faster_chunk(t_list *stack, int chunk_size)
 	return number;
 }
 
-static int	ft_push_chunks(t_list **stack_A, t_list **stack_B, int chunk_size)
+static int	ft_push_chunks(t_list **stack_A, t_list **stack_B, int chunk_size, int exe)
 {
 	t_node_data	*data_A0;
 	int	chunk_number;
@@ -75,10 +75,10 @@ static int	ft_push_chunks(t_list **stack_A, t_list **stack_B, int chunk_size)
 			
 			if(data_A0->ele >= chunk_number * chunk_size && data_A0->ele < (chunk_number+1) * chunk_size)
 			{
-				moves += ft_execute_operation("pb", &(*stack_A), &(*stack_B));
+				moves += ft_execute_operation("pb", &(*stack_A), &(*stack_B), exe);
 				i++;
 			}
-			moves += ft_execute_operation("ra", &(*stack_A), &(*stack_B));
+			moves += ft_execute_operation("ra", &(*stack_A), &(*stack_B), exe);
 
 		}
 	}
@@ -87,32 +87,20 @@ static int	ft_push_chunks(t_list **stack_A, t_list **stack_B, int chunk_size)
 
 // algorithm 6
 // version: 1.0
-// sort a stacks with only 4 or 5 elements
-int	ft_algorithm_6(t_list **stack_A, t_list **stack_B, int chunk_size)
+// sort a stacks with lots of elements
+int	ft_algorithm_6(t_list **stack_A, t_list **stack_B, int chunk_size, int exe)
 {
-	// t_node_data	*data_A0;
-	// t_node_data	*data_A1;
-	// t_node_data	*data_B0;
-	// t_node_data	*data_B1;
 	int			moves;
-	// int			size;
-
-	// size = ft_lstsize(*stack_A);
-	// moves = 0;
-	// ft_load_data(*stack_A, &data_A0, &data_A1);
-	// moves += ft_execute_operation("ra", &(*stack_A), &(*stack_B));
-	// return (moves);
 
 	(void)stack_B;
 	(void)ft_load_data;
 	(void)ft_push_chunks;
 
-	moves = ft_push_chunks(&(*stack_A), &(*stack_B), chunk_size);
+	moves = ft_push_chunks(&(*stack_A), &(*stack_B), chunk_size, exe);
 	while (*stack_A)
-		moves += ft_execute_operation("pb", &(*stack_A), &(*stack_B));
+		moves += ft_execute_operation("pb", &(*stack_A), &(*stack_B), exe);
 	
-	moves += ft_algorithm_2(&(*stack_A), &(*stack_B), ft_lstsize(*stack_A), 1);
-	moves += ft_algorithm_2(&(*stack_B), &(*stack_A), ft_lstsize(*stack_B), 2);
+	moves += ft_algorithm_2(&(*stack_B), &(*stack_A), ft_lstsize(*stack_B), 2, exe);
 
 	return moves;
 }

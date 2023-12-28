@@ -6,7 +6,7 @@
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 14:20:21 by gneto-co          #+#    #+#             */
-/*   Updated: 2023/12/27 14:46:45 by gneto-co         ###   ########.fr       */
+/*   Updated: 2023/12/28 16:23:12 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ int	ft_algorithm_5(t_list **stack_A, t_list **stack_B)
     {
 		ft_load_data(*stack_A, &data_A0, &data_A1);
         if (data_A0->ele > 2)
-            moves += ft_execute_operation("pb", &(*stack_A), &(*stack_B));
+            moves += ft_execute_operation("pb", &(*stack_A), &(*stack_B), 1);
         else
-            moves += ft_execute_operation("ra", &(*stack_A), &(*stack_B));
+            moves += ft_execute_operation("ra", &(*stack_A), &(*stack_B), 1);
     }
     // organizar stack agora que tem só 3 elementos
    	ft_algorithm_4(&(*stack_A), &(*stack_B));
@@ -50,15 +50,15 @@ int	ft_algorithm_5(t_list **stack_A, t_list **stack_B)
 	ft_load_data(*stack_B, &data_B0, &data_B1);
     if (ft_lstsize(*stack_B) > 1 && data_B0->ele < data_B1->ele)
 	{
-        moves += ft_execute_operation("sb", &(*stack_A), &(*stack_B));	
+        moves += ft_execute_operation("sb", &(*stack_A), &(*stack_B), 1);	
 	}
 	while (*stack_B)
 	{
-		moves += ft_execute_operation("pa", &(*stack_A), &(*stack_B));	
+		moves += ft_execute_operation("pa", &(*stack_A), &(*stack_B), 1);	
 	}
 	while (!stack_in_order(*stack_A))
 	{
-		moves += ft_execute_operation("ra", &(*stack_A), &(*stack_B));	
+		moves += ft_execute_operation("ra", &(*stack_A), &(*stack_B), 1);	
 	}
 	
 	return (moves);

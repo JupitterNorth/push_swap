@@ -1,10 +1,10 @@
 -------------------------
--------- log 12 ---------
+-------- log 13 ---------
 -------------------------
 
  resume:
-  -basically working for all requirements
-  -it need a little improvement on algorithm 2
+  -im improving my al6
+    -lstdup need to be dup the content
   -norminette is missing
   -it is on test mode, cant be delivered like that 
 

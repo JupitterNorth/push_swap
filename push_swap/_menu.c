@@ -6,7 +6,7 @@
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 10:27:56 by gneto-co          #+#    #+#             */
-/*   Updated: 2023/12/28 11:58:01 by gneto-co         ###   ########.fr       */
+/*   Updated: 2023/12/28 15:47:08 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int main()
 {
     char i = 0;
     int random;
+    int testes = 1;
     char *args = "$(shuf -i 1-900 -n 100 | tr \"\n\" \" \")";
     
     system("clear");   
@@ -81,8 +82,10 @@ int main()
         if (i == '1')
         {
             char *str;
+            int j = 0;
             str = ft_menu_strjoin("./push_swap ", args);
-            system(str);
+            while (j++ < testes)
+                system(str);
             free(str);
         }
         else if (i == '2')
@@ -110,6 +113,7 @@ int main()
                     "\n\033[93m 4\x1b[0m ex4 - 100 numbers"
                     "\n\033[93m 5\x1b[0m ex5 - 500 numbers"
                     "\n\033[92m r\x1b[0m random x numbers"
+                    "\n\033[92m t\x1b[0m execute x times"
                     "\n\x1b[31m q\x1b[0m quit"
                     "\n\n> ", random
                     );
@@ -138,6 +142,12 @@ int main()
                     args = ft_menu_strjoin(args ,string_numero);
                     args = ft_menu_strjoin(args ," | tr \"\n\" \" \")");
                 }
+                else if (a == 't')
+                {
+            	    fflush(stdout);
+                    printf("\nInsert the amount of testes you want to execute each time\n\n> ");
+                    scanf(" %d", &testes);
+                }
                 else
                     b = a;
             }
@@ -160,7 +170,7 @@ int main()
         {
             system("clear");
             printf("\033[34mnorminette test (only errors): \033[0m\n");
-            system("find . -type f \\( -name '*.c' -o -name '*.h' \\) ! -name '_tester.c' -exec norminette {} \\; | grep -E 'Error|Warning'");
+            system("find . -type f \\( -name '*.c' -o -name '*.h' \\) ! -name '_menu.c' -exec norminette {} \\; | grep -E 'Error|Warning'");
         } 
         else if (i == 'r')
         {

@@ -6,7 +6,7 @@
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 12:35:47 by gneto-co          #+#    #+#             */
-/*   Updated: 2023/12/27 14:45:29 by gneto-co         ###   ########.fr       */
+/*   Updated: 2023/12/28 16:23:34 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,11 @@ int	ft_algorithm_4(t_list **stack_A, t_list **stack_B)
 	if (stack_in_order(*stack_A))
 		return 0;
     if(data_A1->ele == 1 || data_A0->ele == 2)
-	    moves += ft_execute_operation("ra", &(*stack_A), &(*stack_B));
+	    moves += ft_execute_operation("ra", &(*stack_A), &(*stack_B), 1);
     else if(data_A1->ele == 2)
-	    moves += ft_execute_operation("rra", &(*stack_A), &(*stack_B));
+	    moves += ft_execute_operation("rra", &(*stack_A), &(*stack_B), 1);
 	ft_load_data(*stack_A, &data_A0, &data_A1, &data_A2);
     if (data_A0->ele > data_A1->ele)
-		moves += ft_execute_operation("sa", &(*stack_A), &(*stack_B));
+		moves += ft_execute_operation("sa", &(*stack_A), &(*stack_B), 1);
 	return (moves);
 }

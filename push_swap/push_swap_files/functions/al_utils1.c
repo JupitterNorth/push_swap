@@ -6,7 +6,7 @@
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 12:11:14 by gneto-co          #+#    #+#             */
-/*   Updated: 2023/12/27 15:57:33 by gneto-co         ###   ########.fr       */
+/*   Updated: 2023/12/28 16:19:28 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,12 @@ void	ft_table_stacks(t_list *stack_A, t_list *stack_B)
 	fflush(stdout);
 }
 
-int	ft_execute_operation(char *op, t_list **stack_A, t_list **stack_B)
+int	ft_execute_operation(char *op, t_list **stack_A, t_list **stack_B, int ex)
 {
-	ft_putstr(op);
-	ft_putstr("\n");
+	if (ex)
+		ft_putstr(op);
+	if (ex)
+		ft_putstr("\n");
 	if (!ft_strncmp(op, "sa", 2))
 		operation_sa(&(*stack_A));
 	else if (!ft_strncmp(op, "sb", 2))

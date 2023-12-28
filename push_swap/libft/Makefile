@@ -6,7 +6,7 @@
 #    By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 10:51:25 by gneto-co          #+#    #+#              #
-#    Updated: 2023/12/04 10:23:26 by gneto-co         ###   ########.fr        #
+#    Updated: 2023/12/28 16:42:02 by gneto-co         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,6 +68,7 @@ ft_putstr.c \
 ft_putstr_newline.c \
 ft_put_unsigned_nbr.c \
 ft_putpt.c \
+ft_lstdup.c \
 )
 
 VERIFICATIONSSOURCES = $(addprefix verifications/, \
