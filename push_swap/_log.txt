@@ -3,10 +3,9 @@
 -------------------------
 
  resume:
-  -im improving my al6
-    -lstdup need to be dup the content
-  -norminette is missing
-  -it is on test mode, cant be delivered like that 
+  ready to deliver but:
+   -norminette is missing
+   -it is on test mode
 
 
 
@@ -74,6 +73,9 @@
    algorithm2.c-
      sort a stack
   
+   algorithm3.c-
+     useless pre sort
+
    algorithm4.c-
      sort 3 numbers
   

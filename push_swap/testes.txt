@@ -1,4 +1,0 @@
-
-Stack size: 2
-Movements:					4
-Result: WRONG ORDER
