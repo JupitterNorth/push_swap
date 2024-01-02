@@ -6,7 +6,7 @@
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 10:27:14 by gneto-co          #+#    #+#             */
-/*   Updated: 2023/12/29 22:41:10 by gneto-co         ###   ########.fr       */
+/*   Updated: 2024/01/02 17:57:32 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,75 +21,64 @@ static void	ft_load_data(t_list *stack, t_node_data **data_0,
 		(*data_1) = stack->next->content;
 }
 
-static int	ft_algorithm_2A(t_list **stack_A, t_list **stack_B, int half, int size, int	modo, int exe)
+static void	ft_algorithm_2b(t_list *stack_a, t_variables v,
+		t_node_data **data_aa)
 {
-	t_node_data	*data_A0;
-	t_node_data	*data_A1;
-	t_node_data	*data_Aa;
+	if (v.modo == 1)
+		*data_aa = ft_get_smallest_element(stack_a, v.size);
+	else if (v.modo == 2)
+		*data_aa = ft_get_higher_element(stack_a, v.size);
+}
+
+static int	ft_algorithm_2a(t_list **stack_a, t_list **stack_b, t_variables v)
+{
+	t_node_data	*data_a0;
+	t_node_data	*data_a1;
+	t_node_data	*data_aa;
 	int			moves;
 
-	ft_load_data(*stack_A, &data_A0, &data_A1);
+	ft_algorithm_2b(*stack_a, v, &data_aa);
+	ft_load_data(*stack_a, &data_a0, &data_a1);
 	moves = 0;
-	
-	if (modo == 1)
-		data_Aa = ft_get_smallest_element(*stack_A, size);
-	else if (modo == 2)
-		data_Aa = ft_get_higher_element(*stack_A, size);
-		
-	// if there is at least two elements
-	if ((*stack_A)->next)
+	if ((*stack_a)->next)
 	{
-		while (data_A0 != data_Aa)
+		while (data_a0 != data_aa)
 		{
-			if (modo == 1)
-				data_Aa = ft_get_smallest_element(*stack_A, size);
-			else if (modo == 2)
-				data_Aa = ft_get_higher_element(*stack_A, size);
-			if (data_Aa->pos < half)
-				moves += ft_execute_operation("ra", &(*stack_A), &(*stack_B), exe);
+			ft_algorithm_2b(*stack_a, v, &data_aa);
+			if (data_aa->pos < v.half)
+				moves += ft_execute_operation("ra", &(*stack_a), &(*stack_b),
+						v.exe);
 			else
-				moves += ft_execute_operation("rra", &(*stack_A), &(*stack_B), exe);
-			ft_load_data(*stack_A, &data_A0, &data_A1);
+				moves += ft_execute_operation("rra", &(*stack_a), &(*stack_b),
+						v.exe);
+			ft_load_data(*stack_a, &data_a0, &data_a1);
 		}
 	}
-	moves += ft_execute_operation("pb", &(*stack_A), &(*stack_B), exe);
+	moves += ft_execute_operation("pb", &(*stack_a), &(*stack_b), v.exe);
 	return (moves);
 }
 
-
-// algorithm 2
-// version 1.1
-
-int	ft_algorithm_2(t_list **stack_A, t_list **stack_B, int size, int modo, int exe)
+int	ft_algorithm_2(t_list **stack_a, t_list **stack_b, t_variables v)
 {
-	int moves;
-	int half;
+	int	moves;
 	int	i;
-	
+
 	moves = 0;
 	i = 0;
-	while (i < size)
+	while (i < v.size)
 	{
-		half = (ft_lstsize(*stack_A)) / 2;
-		moves += ft_algorithm_2A(&(*stack_A), &(*stack_B), half, size, modo, exe);
+		v.half = (ft_lstsize(*stack_a)) / 2;
+		moves += ft_algorithm_2a(&(*stack_a), &(*stack_b), v);
 		i++;
 	}
-	// ft_table_stacks((*stack_A), (*stack_B));
-	// getchar();
-	if (modo == 1)
+	if (v.modo == 1)
 	{
 		while (i)
 		{
-			moves += ft_execute_operation("pa", &(*stack_A), &(*stack_B), exe);
+			moves += ft_execute_operation("pa", &(*stack_a), &(*stack_b),
+					v.exe);
 			i--;
 		}
 	}
-	// ft_table_stacks((*stack_A), (*stack_B));
-	// getchar();
 	return (moves);
 }
-// modo 1
-//  stack_A passa para stack_B em ordem invertida
-//  e regressa ao stack_A ordenado
-// modo 2
-//  stack_A passa para o stack_B ordenado

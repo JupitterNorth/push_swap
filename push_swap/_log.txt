@@ -4,7 +4,7 @@
 
  resume:
   ready to deliver but:
-   -norminette is missing
+   -norminette is missing, im working in that correct al2 norm
    -it is on test mode
 
 

@@ -6,7 +6,7 @@
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 12:35:47 by gneto-co          #+#    #+#             */
-/*   Updated: 2023/12/28 16:23:34 by gneto-co         ###   ########.fr       */
+/*   Updated: 2024/01/02 18:17:15 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,30 +19,30 @@ static void	ft_load_data(t_list *stack, t_node_data **data_0,
 		(*data_0) = stack->content;
 	if (stack->next)
 		(*data_1) = stack->next->content;
-    if (stack->next->next)
+	if (stack->next->next)
 		(*data_2) = stack->next->next->content;
 }
 
 // algorithm 1
 // version: 1.0
-// sort a stacks with only 3 elements 
-int	ft_algorithm_4(t_list **stack_A, t_list **stack_B)
+// sort a stacks with only 3 elements
+int	ft_algorithm_4(t_list **stack_a, t_list **stack_b)
 {
-	t_node_data	*data_A0;
-	t_node_data	*data_A1;
-	t_node_data	*data_A2;
+	t_node_data	*data_a0;
+	t_node_data	*data_a1;
+	t_node_data	*data_a2;
 	int			moves;
 
-	ft_load_data(*stack_A, &data_A0, &data_A1, &data_A2);
+	ft_load_data(*stack_a, &data_a0, &data_a1, &data_a2);
 	moves = 0;
-	if (stack_in_order(*stack_A))
-		return 0;
-    if(data_A1->ele == 1 || data_A0->ele == 2)
-	    moves += ft_execute_operation("ra", &(*stack_A), &(*stack_B), 1);
-    else if(data_A1->ele == 2)
-	    moves += ft_execute_operation("rra", &(*stack_A), &(*stack_B), 1);
-	ft_load_data(*stack_A, &data_A0, &data_A1, &data_A2);
-    if (data_A0->ele > data_A1->ele)
-		moves += ft_execute_operation("sa", &(*stack_A), &(*stack_B), 1);
+	if (stack_in_order(*stack_a))
+		return (0);
+	if (data_a1->ele == 1 || data_a0->ele == 2)
+		moves += ft_execute_operation("ra", &(*stack_a), &(*stack_b), 1);
+	else if (data_a1->ele == 2)
+		moves += ft_execute_operation("rra", &(*stack_a), &(*stack_b), 1);
+	ft_load_data(*stack_a, &data_a0, &data_a1, &data_a2);
+	if (data_a0->ele > data_a1->ele)
+		moves += ft_execute_operation("sa", &(*stack_a), &(*stack_b), 1);
 	return (moves);
 }

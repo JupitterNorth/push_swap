@@ -6,15 +6,15 @@
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 10:27:56 by gneto-co          #+#    #+#             */
-/*   Updated: 2023/12/28 15:47:08 by gneto-co         ###   ########.fr       */
+/*   Updated: 2023/12/30 17:52:04 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include <time.h>
 
-//run that in your file
-//cc _menu.c -o .menu && ./.menu
+// run that in your file
+// cc _menu.c -o .menu && ./.menu
 
 int long	ft_strlen(const char *str)
 {
