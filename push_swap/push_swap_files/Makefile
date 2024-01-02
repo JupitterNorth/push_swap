@@ -6,7 +6,7 @@
 #    By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 10:51:25 by gneto-co          #+#    #+#              #
-#    Updated: 2024/01/02 18:18:14 by gneto-co         ###   ########.fr        #
+#    Updated: 2024/01/02 18:54:54 by gneto-co         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,6 @@ reverse_rotate.c \
 ALGORITHM_SOURCES = $(addprefix algorithm/, \
 sort.c \
 algorithm2.c \
-algorithm3.c \
 algorithm4.c \
 algorithm5.c \
 algorithm6.c \

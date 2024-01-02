@@ -6,7 +6,7 @@
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:01:08 by gabriel           #+#    #+#             */
-/*   Updated: 2024/01/02 18:38:42 by gneto-co         ###   ########.fr       */
+/*   Updated: 2024/01/02 18:54:46 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ typedef struct variables
 	int		chunk_size;
 	int		moves_record;
 	int		moves;
+	int		best_chunk_size;
+	int		stack_size;
 }			t_variables;
 
 int			ft_push_swap(int *nb_list, int size);
@@ -69,12 +71,8 @@ int			element_on_stack(int element, t_list *stack);
 
 // algorithm
 int			ft_sort_stack(t_list **stack_a, t_list **stack_b);
-// al 1 - pre sort a stack
-int			ft_algorithm_1(t_list **stack_a, t_list **stack_b);
 // al 2 - organize a stack
 int			ft_algorithm_2(t_list **stack_a, t_list **stack_b, t_variables v);
-// al 3 - pre sort a stack
-int			ft_algorithm_3(t_list **stack_a, t_list **stack_b, int exe);
 // al 4 - sort 3 elements
 int			ft_algorithm_4(t_list **stack_a, t_list **stack_b);
 // al 5 - sort 4/5 elements

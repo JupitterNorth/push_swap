@@ -6,7 +6,7 @@
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 11:15:02 by gneto-co          #+#    #+#             */
-/*   Updated: 2024/01/02 18:27:46 by gneto-co         ###   ########.fr       */
+/*   Updated: 2024/01/02 18:53:55 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,17 +71,12 @@ static int	ft_push_chunks(t_list **stack_a, t_list **stack_b, t_variables v)
 // version: 1.0
 // sort a stacks with lots of elements
 int	ft_algorithm_6(t_list **stack_a, t_list **stack_b, t_variables v)
-/* int v.chunk_size, int exe, int moves_record */
 {
-	int			moves;
-	t_variables	v;
-
-	moves = ft_push_chunks(&(*stack_a), &(*stack_b), v);
+	v.moves = ft_push_chunks(&(*stack_a), &(*stack_b), v);
 	while (*stack_a)
-		moves += ft_execute_operation("pb", &(*stack_a), &(*stack_b), v.exe);
+		v.moves += ft_execute_operation("pb", &(*stack_a), &(*stack_b), v.exe);
 	v.size = ft_lstsize(*stack_b);
 	v.modo = 2;
-	moves += ft_algorithm_2(&(*stack_b), &(*stack_a), v);
-
-	return (moves);
+	v.moves += ft_algorithm_2(&(*stack_b), &(*stack_a), v);
+	return (v.moves);
 }

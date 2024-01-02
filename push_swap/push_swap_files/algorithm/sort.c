@@ -6,7 +6,7 @@
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 12:10:01 by gneto-co          #+#    #+#             */
-/*   Updated: 2024/01/02 18:40:16 by gneto-co         ###   ########.fr       */
+/*   Updated: 2024/01/02 18:53:09 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,41 +27,41 @@ static void	*data_dup(void *void_data)
 	return (new_data);
 }
 
-// that function belongs to example 2
+static void	ft_big_sort_initializations(t_list *stack_a, t_variables *v)
+{
+	v->stack_size = ft_lstsize(stack_a);
+	v->moves_record = op_square(v->stack_size);
+	v->chunk_size = v->stack_size / 10;
+	v->best_chunk_size = 0;
+	v->exe = 0;
+}
+
 static int	ft_big_sort(t_list **stack_a, t_list **stack_b, double div_num)
 {
 	t_variables	v;
-	int			best_chunk_size;
-	int			stack_size;
 	t_list		*stack_test_a;
 	t_list		*stack_test_b;
 
-	stack_size = ft_lstsize(*stack_a);
-	v.moves_record = op_square(stack_size);
-	v.chunk_size = stack_size / 10;
-	best_chunk_size = 0;
-	while (v.chunk_size < (stack_size - ((stack_size / 10) * div_num)))
+	ft_big_sort_initializations(*stack_a, &v);
+	while (v.chunk_size < (v.stack_size - ((v.stack_size / 10) * div_num)))
 	{
 		stack_test_a = ft_lstdup(*stack_a, free, data_dup);
 		stack_test_b = ft_lstdup(*stack_b, free, data_dup);
-		v.exe = 0;
-		v.moves = ft_algorithm_6(&stack_test_a, &stack_test_b, v /* chunk_size,
-				0, moves_record */);
+		v.moves = ft_algorithm_6(&stack_test_a, &stack_test_b, v);
 		if (v.moves_record == 0)
 			v.moves_record = v.moves;
 		else if (v.moves < v.moves_record)
 		{
 			v.moves_record = v.moves;
-			best_chunk_size = v.chunk_size;
+			v.best_chunk_size = v.chunk_size;
 		}
 		ft_lstclear(&stack_test_a, free);
 		ft_lstclear(&stack_test_b, free);
 		v.chunk_size++;
 	}
-	v.chunk_size = best_chunk_size;
+	v.chunk_size = v.best_chunk_size;
 	v.exe = 1;
-	v.moves = ft_algorithm_6(&(*stack_a), &(*stack_b), v /* best_chunk_size, 1,
-			moves_record */);
+	v.moves = ft_algorithm_6(&(*stack_a), &(*stack_b), v);
 	return (v.moves);
 }
 
