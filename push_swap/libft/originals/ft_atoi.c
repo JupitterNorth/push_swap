@@ -6,7 +6,7 @@
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 11:11:06 by gneto-co          #+#    #+#             */
-/*   Updated: 2024/01/02 19:34:44 by gneto-co         ###   ########.fr       */
+/*   Updated: 2024/01/04 10:12:27 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,7 @@ int	ft_atoi(const char *nptr)
 	}
 	if (nbr * sinal > INT_MAX || nbr * sinal < INT_MIN)
 		nbr = 0;
-	return (nbr * sinal);
+	if (nbr)
+		nbr *= sinal;
+	return (nbr);
 }

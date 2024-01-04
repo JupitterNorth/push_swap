@@ -6,7 +6,6 @@
   ready to deliver but:
    -norminette ok
    -working for all parameters
-   -it is on test mode !!
 
 
 

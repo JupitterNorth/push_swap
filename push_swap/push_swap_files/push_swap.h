@@ -6,7 +6,7 @@
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:01:08 by gabriel           #+#    #+#             */
-/*   Updated: 2024/01/02 18:54:46 by gneto-co         ###   ########.fr       */
+/*   Updated: 2024/01/04 10:26:52 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,6 @@ typedef struct variables
 }			t_variables;
 
 int			ft_push_swap(int *nb_list, int size);
-
-// REMOVE AT THE END
-void		ft_table_stacks(t_list *stack_a, t_list *stack_b);
 
 // operations
 void		operation_sa(t_list **stack_a);

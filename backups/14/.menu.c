@@ -6,7 +6,7 @@
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 10:27:56 by gneto-co          #+#    #+#             */
-/*   Updated: 2024/01/02 19:38:20 by gneto-co         ###   ########.fr       */
+/*   Updated: 2024/01/04 10:54:03 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <time.h>
 
 // run that in your file
-// cc _menu.c -o .menu && ./.menu
+// cc .menu.c -o .menu && ./.menu
 
 int long	ft_strlen(const char *str)
 {

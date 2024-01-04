@@ -6,7 +6,7 @@
 /*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 10:29:13 by gabriel           #+#    #+#             */
-/*   Updated: 2024/01/02 19:26:49 by gneto-co         ###   ########.fr       */
+/*   Updated: 2024/01/04 10:44:17 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,25 +20,11 @@ static void	ft_error(void)
 
 static int	check_errors(int *nb_list, char *av[], int i)
 {
-	if (!ft_atoi(av[i + 1]) || ft_nb_already_exist(nb_list, ft_atoi(av[i + 1]),
-			i))
-	{
-		if (ft_strncmp(av[i + 1], "0", 2) && ft_nb_already_exist(nb_list,
-				ft_atoi(av[i + 1]), i))
-		{
-			if (ft_nb_already_exist(nb_list, ft_atoi(av[i + 1]), i))
-			{
-				ft_error();
-				return (0);
-			}
-			if (!ft_atoi(av[i + 1]))
-			{
-				ft_error();
-				return (0);
-			}
-		}
-	}
-	nb_list[i] = ft_atoi(av[i + 1]);
+	if (!ft_atoi(av[i + 1]))
+		if (ft_strncmp(av[i + 1], "0", 2))
+			return (0);
+	if (ft_nb_already_exist(nb_list, ft_atoi(av[i + 1]), i))
+		return (0);
 	return (1);
 }
 
@@ -52,7 +38,11 @@ static int	*ft_args_to_numbers(int ac, char *av[])
 	while (i < ac - 1)
 	{
 		if (!check_errors(nb_list, av, i))
+		{
+			free(nb_list);
 			return (0);
+		}
+		nb_list[i] = ft_atoi(av[i + 1]);
 		i++;
 	}
 	return (nb_list);
@@ -73,7 +63,5 @@ int	main(int ac, char *av[])
 		else
 			ft_error();
 	}
-	else
-		ft_error();
 	return (0);
 }

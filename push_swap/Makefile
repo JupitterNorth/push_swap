@@ -6,7 +6,7 @@
 #    By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 10:09:55 by gabriel           #+#    #+#              #
-#    Updated: 2023/12/28 12:05:08 by gneto-co         ###   ########.fr        #
+#    Updated: 2024/01/04 09:39:14 by gneto-co         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,20 +73,20 @@ all: $(NAME)
 $(NAME): $(MAIN) $(PROJECT) $(LIBFT)
 	clang $(CFLAGS) -o $(NAME) $(MAIN) $(PROJECT) $(LIBFT)
 	@clear
-	@echo "\033[32m\n----------$(NAME) compiled and ready!----------\033[0m"
+	@echo "\033[32m\n---------- $(NAME) compiled and ready! ----------\033[0m"
 
 clean:
 	@rm -f $(MAIN) $(NAME)
 	@$(MAKE) -C $(LIBFT_PATH) clean --no-print-directory
 	@$(MAKE) -C $(PROJECT_PATH) clean --no-print-directory
 	@clear
-	@echo "\033[31m\033[33m\n----------program objects cleaned----------\033[0m"
+	@echo "\033[31m\033[33m\n---------- program objects cleaned ----------\033[0m"
 
 fclean: clean
 	@rm -f $(NAME)
 	@$(MAKE) -C $(LIBFT_PATH) fclean --no-print-directory
 	@$(MAKE) -C $(PROJECT_PATH) fclean --no-print-directory
 	@clear
-	@echo "\033[31m\033[33m\n---------program name and objects cleaned----------\033[0m"
+	@echo "\033[31m\033[33m\n--------- program name and objects cleaned ----------\033[0m"
 	
 re: fclean all
