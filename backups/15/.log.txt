@@ -1,0 +1,90 @@
+-------------------------
+-------- log 14 ---------
+-------------------------
+
+ resume:
+  ready to deliver but:
+   -norminette missing
+   -working for all parameters
+   -it was a few errors but nows ok
+   -it have a commnads executor too commented on main
+
+
+
+-------------------------
+------- push_swap -------
+-------------------------
+
+ libft/
+   ...
+
+ push_swap_files/
+   ...
+
+ _log.txt
+
+ _menu.c
+
+ main.c
+
+ Makefile-		! flags !
+   global
+   libft
+   project
+
+
+
+-------------------------
+---- push_swap_files ----
+-------------------------
+
+ push_swap.c		! test mode !
+
+ push_swap.h
+ 
+ Makefile
+
+ functions/
+   al_utils.c
+   order_verification.c
+   organize.c
+   stack_creation.c
+ 
+ operations/
+   push.c-
+     pa, pb
+
+   reverse_rotate.c-
+     rra, rrb, rrr
+ 
+   rotate.c-
+     ra, rb, rr
+ 
+   swap.c-
+     sa, sb, ss
+ 
+ algorithm/
+ 
+   sort.c-
+     working for stack size
+     3, 5, 100, 500
+ 
+   algorithm1.c-
+     sort but is to slow
+  
+   algorithm2.c-
+     sort a stack
+  
+   algorithm3.c-
+     useless pre sort
+
+   algorithm4.c-
+     sort 3 numbers
+  
+   algorithm5.c-
+     sort 4 or 5 numbers
+  
+   algorithm6.c-
+     sort big numbers
+
+

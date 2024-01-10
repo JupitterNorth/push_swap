@@ -1,0 +1,14 @@
+{
+    "cSpell.words": [
+        "shuf"
+    ],
+    "cSpell.ignoreWords": [
+        "gneto",
+        "lstclear",
+        "lstdup",
+        "lstsize"
+    ],
+    "files.associations": {
+        "get_next_line.h": "c"
+    }
+}
