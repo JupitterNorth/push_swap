@@ -6,7 +6,7 @@
 /*   By: gneto-co <gneto-co@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 10:27:56 by gneto-co          #+#    #+#             */
-/*   Updated: 2024/01/19 14:46:33 by gneto-co         ###   ########.fr       */
+/*   Updated: 2024/01/23 11:40:21 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ static void ex_0(void)
 		else
 			b = a;
 	}
+	free(g_args);
 	g_args = ft_multi_strjoin("$(shuf -i 1-900 -n %d | tr \"\n\" \" \") ", nb);
 	system("clear");
 }
@@ -213,7 +214,7 @@ static void ex_b(void)
 static char	main_menu()
 {	
 	char	c;
-	
+
 	fflush(stdout);
 	printf("\033]0;Test Menu\007");
 	printf
@@ -269,6 +270,7 @@ int	main(void)
 {
 	char	c;
 
+	g_args = ft_strdup("$(shuf -i 1-900 -n 100 | tr \"\n\" \" \") ");
 	c = 0;
 	system("clear");
 	while (c != 'q')
@@ -277,4 +279,6 @@ int	main(void)
 		system("clear");
 		sort_number(c);
 	}
+	free(g_args);
+
 }
