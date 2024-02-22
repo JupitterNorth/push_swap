@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gneto-co <gneto-co@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:01:08 by gabriel           #+#    #+#             */
-/*   Updated: 2024/01/04 10:26:52 by gneto-co         ###   ########.fr       */
+/*   Updated: 2024/02/22 16:04:12 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 # define INT_MAX 2147483647
 # define INT_MIN -2147483648
 
-typedef struct node_data
+typedef struct s_node_data
 {
 	int		nb;
 	int		pos;
 	int		ele;
 }			t_node_data;
 
-typedef struct variables
+typedef struct s_variables
 {
 	int		half;
 	int		size;
@@ -59,15 +59,23 @@ void		operation_rrr(t_list **stack_a, t_list **stack_b);
 // functions
 t_list		*ft_stack_creation(int *nb_list, int size);
 void		ft_organize_stack(t_list **stack);
-t_node_data	*ft_get_higher_element(t_list *stack, int max_pos);
-t_node_data	*ft_get_smallest_element(t_list *stack, int max_pos);
 int			ft_execute_operation(char *op, t_list **stack_a, t_list **stack_b,
 				int ex);
+
+t_node_data	*ft_get_higher_element(t_list *stack, int max_pos);
+t_node_data	*ft_get_smallest_element(t_list *stack, int max_pos);
+t_node_data	*ft_get_first_element_on_range(t_list *stack, int r_begin,
+				int r_end);
+t_node_data	*ft_get_last_element_on_range(t_list *stack, int r_begin,
+				int r_end);
+
 int			stack_in_order(t_list *stack);
 int			element_on_stack(int element, t_list *stack);
 
 // algorithm
 int			ft_sort_stack(t_list **stack_a, t_list **stack_b);
+// al 1 - sort lots of numbers
+int			ft_algorithm_1(t_list **stack_a, t_list **stack_b);
 // al 2 - organize a stack
 int			ft_algorithm_2(t_list **stack_a, t_list **stack_b, t_variables v);
 // al 4 - sort 3 elements

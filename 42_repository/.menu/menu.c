@@ -6,7 +6,7 @@
 /*   By: gneto-co <gneto-co@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 10:27:56 by gneto-co          #+#    #+#             */
-/*   Updated: 2024/01/23 11:40:21 by gneto-co         ###   ########.fr       */
+/*   Updated: 2024/02/22 17:59:04 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,16 @@ static void	ex_5(void)
 	int j = 0;
 	
 	ex = ft_multi_strjoin("ARG=%s; ./%s $ARG | ./checker_OS $ARG", g_args, g_name);
+	system(ex);
+	free(ex);
+}
+
+static void	ex_6(void)
+{
+	char *ex;
+	int j = 0;
+	
+	ex = ft_multi_strjoin("ARG=%s; ./%s $ARG | wc -l", g_args, g_name);
 	system(ex);
 	free(ex);
 }
@@ -226,6 +236,7 @@ static char	main_menu()
 		"\n\033[32m 3\x1b[0m make re"
 		"\n\033[32m 4\x1b[0m make fclean"
 		"\n\033[95m 5\x1b[0m checker_OS"
+		"\n\033[95m 6\x1b[0m lines"
 		"\n ---------"
 		"\n\033[94m g\x1b[0m git menu"
 		"\n\033[95m n\x1b[0m norminette"
@@ -254,6 +265,8 @@ static void	sort_number(char c)
 		ex_4();
 	else if (c == '5')
 		ex_5();
+	else if (c == '6')
+		ex_6();
 	else if (c == 'g')
 		ex_g();
 	else if (c == 'n')

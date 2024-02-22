@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gneto-co <gneto-co@student.42.fr>          +#+  +:+       +#+         #
+#    By: gneto-co <gneto-co@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 10:51:25 by gneto-co          #+#    #+#              #
-#    Updated: 2024/01/02 18:54:54 by gneto-co         ###   ########.fr        #
+#    Updated: 2024/02/22 16:07:09 by gneto-co         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ stack_creation.c \
 organize.c \
 order_verification.c \
 al_utils1.c \
+al_utils2.c \
 )
 
 OPERATIONS_SOURCES = $(addprefix operations/, \
@@ -31,6 +32,7 @@ reverse_rotate.c \
 
 ALGORITHM_SOURCES = $(addprefix algorithm/, \
 sort.c \
+algorithm1.c \
 algorithm2.c \
 algorithm4.c \
 algorithm5.c \
