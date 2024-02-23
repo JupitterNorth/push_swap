@@ -6,57 +6,11 @@
 /*   By: gneto-co <gneto-co@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 12:11:14 by gneto-co          #+#    #+#             */
-/*   Updated: 2024/02/22 20:29:32 by gneto-co         ###   ########.fr       */
+/*   Updated: 2024/02/23 13:45:27 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-static void	ft_table_stacks(t_list *stack_a, t_list *stack_b)
-{
-	int			i;
-	int			size_a;
-	int			size_B;
-	size_a = ft_lstsize(stack_a);
-	size_B = ft_lstsize(stack_b);
-	t_node_data	*data_A[size_a];
-	t_node_data	*data_b[size_B];
-
-	i = 0;
-	while (i < size_a)
-	{
-		data_A[i] = stack_a->content;
-		stack_a = stack_a->next;
-		i++;
-	}
-	i = 0;
-	while (i < size_B)
-	{
-		data_b[i] = stack_b->content;
-		stack_b = stack_b->next;
-		i++;
-	}
-	i = 0;
-	printf("\n┌─────┬─────┬─────┐┌─────┬─────┬─────┐"
-			"\n│  A  │ ele │ num ││  B  │ ele │ num │");
-	while (i < size_a || i < size_B)
-	{
-		printf("\n├─────┼─────┼─────┤├─────┼─────┼─────┤\n");
-		if (i < size_a)
-			printf("│ %3d │ %3d │ %3d │", data_A[i]->pos, data_A[i]->ele,
-				data_A[i]->nb);
-		else
-			printf("│     │     │     │");
-		if (i < size_B)
-			printf("│ %3d │ %3d │ %3d │", data_b[i]->pos, data_b[i]->ele,
-				data_b[i]->nb);
-		else
-			printf("│     │     │     │");
-		i++;
-	}
-	printf("\n└─────┴─────┴─────┘└─────┴─────┴─────┘\n");
-	fflush(stdout);
-}
 
 static void	p(char *op, int ex)
 {
@@ -91,11 +45,6 @@ int	ft_execute_operation(char *op, t_list **stack_A, t_list **stack_B, int ex)
 		operation_rb(&(*stack_B));
 	else if (!ft_strncmp(op, "rr", 2))
 		operation_rr(&(*stack_A), &(*stack_B));
-
-	// ft_table_stacks(*stack_A, *stack_B);
-	// getchar();
-	(void)ft_table_stacks;
-	
 	return (1);
 }
 

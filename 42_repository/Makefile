@@ -6,7 +6,7 @@
 #    By: gneto-co <gneto-co@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 10:09:55 by gabriel           #+#    #+#              #
-#    Updated: 2024/01/23 11:47:59 by gneto-co         ###   ########.fr        #
+#    Updated: 2024/02/23 13:46:00 by gneto-co         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,7 +57,7 @@ $(PROJECT):
 #--------------------------------------------------------------------------------
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I$(LIBFT_PATH) -I$(PROJECT_PATH) -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -I$(LIBFT_PATH) -I$(PROJECT_PATH) 
 
 
 

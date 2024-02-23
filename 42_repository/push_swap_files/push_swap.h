@@ -6,7 +6,7 @@
 /*   By: gneto-co <gneto-co@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:01:08 by gabriel           #+#    #+#             */
-/*   Updated: 2024/02/22 16:04:12 by gneto-co         ###   ########.fr       */
+/*   Updated: 2024/02/23 12:55:05 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,10 @@ t_node_data	*ft_get_first_element_on_range(t_list *stack, int r_begin,
 				int r_end);
 t_node_data	*ft_get_last_element_on_range(t_list *stack, int r_begin,
 				int r_end);
+void		change_to_stack_a(t_node_data *member_position, t_list **stack_a,
+				t_list **stack_b);
+void		change_to_stack_b(t_node_data *member_position, t_list **stack_a,
+				t_list **stack_b);
 
 int			stack_in_order(t_list *stack);
 int			element_on_stack(int element, t_list *stack);
